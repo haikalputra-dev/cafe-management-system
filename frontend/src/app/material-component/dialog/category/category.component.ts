@@ -1,5 +1,5 @@
 import { Component,EventEmitter, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CategoryService } from 'src/app/services/category.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
@@ -13,13 +13,13 @@ import { GlobalConstants } from 'src/app/shared/global-constants';
 export class CategoryComponent implements OnInit {
   onAddCategory = new EventEmitter()
   onEditCategory = new EventEmitter()
-  categoryForm:any = FormGroup
+  categoryForm:any = UntypedFormGroup
   dialogAction:any = "Add"
   action:any = "Add"
   responseMessage:any
 
   constructor(@Inject(MAT_DIALOG_DATA) public dialogData:any,
-  private formBuilder:FormBuilder,
+  private formBuilder:UntypedFormBuilder,
   private categoryService:CategoryService,
   private dialogRef:MatDialogRef<CategoryComponent>,
   private snackbarService:SnackbarService) { }

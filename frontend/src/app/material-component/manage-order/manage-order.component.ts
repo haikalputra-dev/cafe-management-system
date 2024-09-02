@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BillService } from 'src/app/services/bill.service';
 import { CategoryService } from 'src/app/services/category.service';
@@ -16,14 +16,14 @@ export class ManageOrderComponent implements OnInit {
 
   displayedColumns: string[] = ['name','category','price','quantity','total','edit'];
   dataSource:any = []
-  manageOrderForm:any = FormGroup
+  manageOrderForm:any = UntypedFormGroup
   categories:any = []
   products:any = []
   price:any
   totalAmount:number = 0
   responseMessage:any
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(private formBuilder:UntypedFormBuilder,
     private categoryService:CategoryService,
     private productService:ProductService,
     private snackbarService: SnackbarService,

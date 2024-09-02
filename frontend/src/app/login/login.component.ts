@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { SnackbarService } from '../services/snackbar.service';
@@ -13,10 +13,10 @@ import { GlobalConstants } from '../shared/global-constants';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-loginForm:any = FormGroup
+loginForm:any = UntypedFormGroup
 responseMessage:any
 
-constructor(private formBuilder:FormBuilder,
+constructor(private formBuilder:UntypedFormBuilder,
   private router: Router,
   private userService: UserService,
   private snackbarService: SnackbarService,

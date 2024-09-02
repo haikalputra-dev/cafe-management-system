@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -12,10 +12,10 @@ import { GlobalConstants } from '../shared/global-constants';
   styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit {
-  forgotPasswordForm:any = FormGroup
+  forgotPasswordForm:any = UntypedFormGroup
   responseMessage:any
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(private formBuilder:UntypedFormBuilder,
     private userService:UserService,
     private dialogRef:MatDialogRef<ForgotPasswordComponent>,
     private ngxService: NgxUiLoaderService,
