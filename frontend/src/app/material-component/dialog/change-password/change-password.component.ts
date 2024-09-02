@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { SnackbarService } from 'src/app/services/snackbar.service';
@@ -12,10 +12,10 @@ import { GlobalConstants } from 'src/app/shared/global-constants';
   styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent implements OnInit {
-  changePasswordForm:any = FormGroup
+  changePasswordForm:any = UntypedFormGroup
   responseMessage:any
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(private formBuilder:UntypedFormBuilder,
     private userService: UserService,
     private snackbarService: SnackbarService,
     private dialogRef: MatDialogRef<ChangePasswordComponent>,
